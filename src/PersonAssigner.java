@@ -9,7 +9,7 @@ public class PersonAssigner {
     public static void main(String[] args) {
 		ArrayList<String> names = new ArrayList<String>();
 		ArrayList<String> assignedTo = new ArrayList<String>();
-	    String fileName = "/Users/scott2/Desktop/EclipseProjects/SecretSanta/NameList.txt";
+	    String fileName = "./NameList.txt";
 	    Random generator = new Random();
 	    FileReader file;
 	    BufferedReader reader;
