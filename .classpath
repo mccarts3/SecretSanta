@@ -2,5 +2,7 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/Users/mccar/Desktop/workspace/Java/SecretSanta/jars/activation.jar"/>
+	<classpathentry kind="lib" path="C:/Users/mccar/Desktop/workspace/Java/SecretSanta/jars/mail.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
