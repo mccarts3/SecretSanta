@@ -9,7 +9,6 @@ import java.util.Random;
 public class PersonAssigner {
     public static void main(String[] args) {
 		ArrayList<Person> people = new ArrayList<Person>();
-		ArrayList<String> assignedTo = new ArrayList<String>();
 	    String fileName = "./names.csv";
 	    Random generator = new Random();
 	    FileReader file;
@@ -58,7 +57,7 @@ public class PersonAssigner {
 				people.get(currAssignee).setSecretSanta(remainingNames.remove(randIndex));
 				currAssignee++;
 			} else if(remainingNames.size() == 1) {
-				String tempName = people.get(currAssignee).getSecretSanta();
+				String tempName = people.get(currAssignee-1).getSecretSanta();
 				people.get(currAssignee-1).setSecretSanta(remainingNames.remove(remainingNames.size()-1));
 				people.get(currAssignee).setSecretSanta(tempName);
 			}
