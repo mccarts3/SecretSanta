@@ -11,6 +11,12 @@ public class Person {
 		this.secretSanta = null;
 	}
 	
+	public Person(String name, String email, String secretSanta) {
+		this.name = name;
+		this.email = email;
+		this.secretSanta = secretSanta;
+	}
+	
 	public void setName(String name) {
 		this.name = name;
 	}
