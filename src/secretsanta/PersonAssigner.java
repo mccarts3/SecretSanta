@@ -55,19 +55,17 @@ public class PersonAssigner {
 			int randIndex = generator.nextInt(remainingNames.size());
 
 			if(remainingNames.get(randIndex) != people.get(currAssignee).getName()) {
-				assignedTo.add(remainingNames.remove(randIndex));
+				people.get(currAssignee).setSecretSanta(remainingNames.remove(randIndex));
 				currAssignee++;
 			} else if(remainingNames.size() == 1) {
-				String tempName = assignedTo.remove(assignedTo.size()-1);
-				assignedTo.add(remainingNames.remove(remainingNames.size()-1));
-				assignedTo.add(tempName);
+				String tempName = people.get(currAssignee).getSecretSanta();
+				people.get(currAssignee-1).setSecretSanta(remainingNames.remove(remainingNames.size()-1));
+				people.get(currAssignee).setSecretSanta(tempName);
 			}
 		}
 		
-		int i = 0;
 		for(Person p : people) {
-		    System.out.println(p.getName() + "   " + p.getEmail() + " --- " + assignedTo.get(i));
-		    i++;
+		    System.out.println(p.getName() + "   " + p.getEmail() + " --- " + p.getSecretSanta());
 		}
     }
 }
