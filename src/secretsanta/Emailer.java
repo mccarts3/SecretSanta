@@ -35,6 +35,7 @@ public class Emailer {
 		Scanner in = new Scanner(System.in);
 		System.out.print("Enter password for " + username + ": ");
 		String password = in.next();
+		in.close();
 		
 		session = Session.getDefaultInstance(props,
 				new javax.mail.Authenticator() {

@@ -10,8 +10,8 @@ public class Tester {
 		System.out.print("Enter the email host for " + username + ": @");
 		String emailHost = "@" + in.next();
 		Emailer email = new Emailer(username, username+emailHost);
+		in.close();
 		
-		email.sendEmail("mccarts3@miamioh.edu", "Kevin Kane");
-		email.sendEmail("smccartney09@gmail.com", "Scott McCartney");
+		email.sendEmail("mccarts3@miamioh.edu", "Sarah Liversage");
 	}
 }

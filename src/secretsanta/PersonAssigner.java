@@ -8,9 +8,9 @@ import java.util.Random;
 
 public class PersonAssigner {
     public static void main(String[] args) {
-		ArrayList<String> names = new ArrayList<String>();
+		ArrayList<Person> people = new ArrayList<Person>();
 		ArrayList<String> assignedTo = new ArrayList<String>();
-	    String fileName = "./NameList.txt";
+	    String fileName = "./names.csv";
 	    Random generator = new Random();
 	    FileReader file;
 	    BufferedReader reader;
@@ -18,12 +18,17 @@ public class PersonAssigner {
 		try {
 		    file = new FileReader(fileName);
 		    reader = new BufferedReader(file);
+		    
 		    while (true) {
-			    String name = reader.readLine();
-			    if (name == null) {
+		    	String line = reader.readLine();
+		    	
+			    if (line == null) {
 			    	break;
 			    } else {
-			    	names.add(name);
+			    	String[] data = line.split(",");
+			    	String name = data[0];
+				    String email = data[1];
+			    	people.add(new Person(name, email));
 			    }
 		    }
 		    
@@ -41,20 +46,15 @@ public class PersonAssigner {
 		}       
 		
 		ArrayList<String> remainingNames = new ArrayList<String>();
-		for(int i=0; i<names.size(); i++) {
-			remainingNames.add(names.get(i));
+		for(Person p : people) {
+			remainingNames.add(p.getName());
 		}
 		
 		int currAssignee = 0;
 		while(remainingNames.size() > 0) {
 			int randIndex = generator.nextInt(remainingNames.size());
-			
-			/* 
-			 * Test to see if remainingNames.get(randIndex) is equal to names.get(current number it'd be assigned to)
-			 * 	 - If last  one, go back a few steps and try again
-			 *   - If not the last one, don't add and try random number again
-			 */
-			if(remainingNames.get(randIndex) != names.get(currAssignee)) {
+
+			if(remainingNames.get(randIndex) != people.get(currAssignee).getName()) {
 				assignedTo.add(remainingNames.remove(randIndex));
 				currAssignee++;
 			} else if(remainingNames.size() == 1) {
@@ -64,13 +64,10 @@ public class PersonAssigner {
 			}
 		}
 		
-		System.out.println(names.size());
-		System.out.println(assignedTo.size());
-		for(int i=0; i<names.size(); i++) {
-		    if(names.get(i).equals(assignedTo.get(i))) {
-		    	System.out.println(names.get(i) + " --- SAME PERSON");
-		    }
-		    System.out.println(names.get(i) + " --- " + assignedTo.get(i));
+		int i = 0;
+		for(Person p : people) {
+		    System.out.println(p.getName() + "   " + p.getEmail() + " --- " + assignedTo.get(i));
+		    i++;
 		}
     }
 }
