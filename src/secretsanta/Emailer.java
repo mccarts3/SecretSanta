@@ -53,9 +53,8 @@ public class Emailer {
 					InternetAddress.parse(to));		// Change to "to"
 			message.setSubject("Secret Santa");
 			message.setText("Your secret santa is: " + secretSanta + ".  \n\nReminder, " + 
-			" there is a $25 maximum for gifts.  Be ready to give gifts before the Christmas" +
-			" party on December 3rd at 7pm. If you have any questions, contact Scott McCartney or" + 
-			" Kevin Kane.");
+			" there is a $x maximum for gifts.  Be ready to give gifts before the Christmas" +
+			" party on December x. If you have any questions, contact Scott McCartney.");
 
 			Transport.send(message);
 

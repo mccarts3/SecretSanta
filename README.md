@@ -4,3 +4,7 @@ Person object that will hold the name and email of the person, as well as the pe
 
 ### Notes
 The purpose of this Secret Santa Assigner is to only change the names.csv file in the project.
+
+### TODO
+ 1. Add secure password entering while signing into Gmail through console
+ 2. Add non-gmail clients

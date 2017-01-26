@@ -64,20 +64,17 @@ public class PersonAssigner {
 			}
 		}
 		
-		/*
-		 * Comment out the following to add email capabilities
-		 */
-//		Scanner in = new Scanner(System.in);
-//		System.out.print("Enter username: ");
-//		String username = in.next();
-//		System.out.print("Enter the email host for " + username + ": @");
-//		String emailHost = "@" + in.next();
-//		Emailer email = new Emailer(username, username+emailHost);
-//		in.close();
+		Scanner in = new Scanner(System.in);
+		System.out.print("Enter username: ");
+		String username = in.next();
+		System.out.print("Enter the email host for " + username + ": @");
+		String emailHost = "@" + in.next();
+		Emailer email = new Emailer(username, username+emailHost);
+		in.close();
 		
 		for(Person p : people) {
 		    System.out.println(p.getName() + "," + p.getEmail() + "," + p.getSecretSanta());
-//			email.sendEmail(p.getEmail(), p.getSecretSanta());
+		    email.sendEmail(p.getEmail(), p.getSecretSanta());
 		}
     }
 }
