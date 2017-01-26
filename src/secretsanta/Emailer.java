@@ -54,7 +54,7 @@ public class Emailer {
 			message.setSubject("Secret Santa");
 			message.setText("Your secret santa is: " + secretSanta + ".  \n\nReminder, " + 
 			" there is a $25 maximum for gifts.  Be ready to give gifts before the Christmas" +
-			" party on December 3rd. If you have any questions, contact Scott McCartney or" + 
+			" party on December 3rd at 7pm. If you have any questions, contact Scott McCartney or" + 
 			" Kevin Kane.");
 
 			Transport.send(message);
